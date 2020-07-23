@@ -24,5 +24,8 @@ boggle_game = Boggle()
 def home_page():
     """shows home page"""
     board = boggle_game.make_board()
+    session["board"] = board
+    highscore = session.get("highscore", 0)
+    nplays = session.get("nplays", 0)
 
-    return render_template("home.html", title=title, instructions=instructions)
+    return render_template("index.html", board=board, highscore=highscore, nplays=nplays)
