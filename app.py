@@ -18,3 +18,11 @@ debug = DebugToolbarExtension(app)
 boggle_game = Boggle()
 
 
+# //////////////////////////////////////////////////////// HOME
+
+@app.route('/')
+def home_page():
+    """shows home page"""
+    board = boggle_game.make_board()
+
+    return render_template("home.html", title=title, instructions=instructions)
