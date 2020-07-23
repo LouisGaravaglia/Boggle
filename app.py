@@ -16,3 +16,5 @@ app.config["DEBUG_TB_HOSTS"] = ["dont-show-debug-toolbar"]
 debug = DebugToolbarExtension(app)
 
 boggle_game = Boggle()
+
+lkjlk
