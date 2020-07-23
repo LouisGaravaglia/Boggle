@@ -12,10 +12,18 @@
 
 <h1>Ready to play Boggle!</h1>
 <br>
-<form action="/questions/0">
 
-<button>Start Game</button>
-</form>
+<table class="board">
+    <tbody>
+        {% for row in board %}
+            <tr>
+                {% for cell in row %}
+                    <td>{{cell}}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
 
 
 
