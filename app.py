@@ -1,5 +1,4 @@
 from boggle import Boggle
-from app import app
 from flask import Flask, request, render_template, session, make_response, redirect, flash
 from random import choice, randint
 from unittest import TestCase
