@@ -1,5 +1,5 @@
 from boggle import Boggle
-from flask import Flask, request, render_template, session, make_response, redirect, flash
+from flask import Flask, request, render_template, session, make_response, redirect, flash, jsonify
 from random import choice, randint
 from unittest import TestCase
 from flask_debugtoolbar import DebugToolbarExtension
@@ -21,6 +21,7 @@ boggle_game = Boggle()
 @app.route('/')
 def home_page():
     """shows home page"""
+    
     board = boggle_game.make_board()
     session["board"] = board
     highscore = session.get("highscore", 0)
@@ -48,7 +49,6 @@ def post_score():
     score = request.json["score"]
     highscore = session.get("highscore", 0)
     nplays = session.get("nplays", 0)
-
     session['nplays'] = nplays + 1
     session['highscore'] = max(score, highscore)
 
